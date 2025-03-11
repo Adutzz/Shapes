@@ -1,0 +1,19 @@
+# compiler setup
+CC=gcc
+CFLAGS=-Wall -Wextra -std=c99 -lm
+
+# define targets
+TARGETS=forme
+
+build: $(TARGETS)
+
+forme: Problema2.c
+	$(CC) $(CFLAGS) Problema2.c -o forme
+
+pack:
+	zip -FSr 315CA_RotaruFlorisAdrian_Tema1.zip README Makefile *.c
+
+clean:
+	rm -f $(TARGETS)
+
+.PHONY: pack clean
